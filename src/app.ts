@@ -1,13 +1,12 @@
 import express from "express";
-
-const app = express();
+import * as dotenv from "dotenv";
+export const app = express();
+import { databaseURL } from "./config";
+import { init } from "./init";
 
 const port = 8000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+dotenv.config();
 
-app.listen(port, () => {
-  console.log(`App is running on http://localhost:${port}`)
-})
+/** initialize middleware */
+init(app);
