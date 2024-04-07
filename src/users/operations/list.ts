@@ -1,9 +1,12 @@
-// import { db } from "../../lib/drizzle/db";
-import { users } from "../../lib/drizzle/drizzle.schema";
+import { db } from '../../lib/kysely/database'
+import { PersonUpdate, Person, NewPerson } from '../../lib/kysely/types'
 
 export const listUsers = async () => {
-    // const allUsers = await db.select().from(users);
-    // console.log(allUsers);
+    let query = db.selectFrom('person');
+
+    const result = await query.selectAll().execute();
+
+    console.log(result);
     return [
         {
             id: 1,
