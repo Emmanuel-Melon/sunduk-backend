@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "nodemon ./src/server.ts"
+    "dev": "nodemon ./src/server.ts",
+    "codegen": "kysely-codegen --dialect postgres --camel-case --out-file ./src/lib/kysely/kysely-types.d.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.9.0",
@@ -21,6 +22,7 @@
     "@types/node": "^20.11.30",
     "@types/pg": "^8.11.4",
     "drizzle-kit": "^0.20.14",
+    "kysely-codegen": "^0.14.2",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.3"

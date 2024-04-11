@@ -3,6 +3,11 @@ import { Pool } from 'pg'
 import { Kysely, PostgresDialect } from 'kysely';
 import { databaseUser, databasePort, databaseHost, database } from "../../config";
 
+console.log(database);
+console.log(databaseHost);
+console.log(databasePort);
+console.log(databaseUser)
+
 const dialect = new PostgresDialect({
   pool: new Pool({
     database,

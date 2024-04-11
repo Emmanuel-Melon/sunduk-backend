@@ -6,27 +6,5 @@ export const listUsers = async () => {
 
     const result = await query.selectAll().execute();
 
-    console.log(result);
-    return [
-        {
-            id: 1,
-            name: "Trevor",
-            description: "Hello, world",
-            members: 15,
-            cycleDuration: "2 weeks",
-            nextPayout: "April 15th",
-            contributionAmount: 200,
-            payoutAmount: 3000
-        },
-        {
-            id: 2,
-            name: "Eman",
-            description: "Hello, world",
-            members: 15,
-            cycleDuration: "2 weeks",
-            nextPayout: "April 15th",
-            contributionAmount: 200,
-            payoutAmount: 3000
-        }
-    ];
+    return result;
 }

@@ -4,7 +4,9 @@ import { PersonUpdate, Person, NewPerson } from '../../lib/kysely/types'
 
 
 const userAttrsSchema = z.object({
-  name: z.string(),
+  firstName: z.string(),
+  lastName: z.string(),
+  gender: z.any(),
 });
 
 export type UserAttrs = z.infer<typeof userAttrsSchema>;
@@ -14,9 +16,9 @@ export const createUser = async (userAttrs: UserAttrs): Promise<any> => {
   const result = await db
   .insertInto('person')
   .values({
-    first_name: 'Jennifer',
-    last_name: 'Aniston',
-    gender: 'woman',
+    first_name: userAttrs.firstName,
+    last_name: userAttrs.lastName,
+    gender: userAttrs.gender,
     //created_at: new Date(),
     metadata: {
       // @ts-ignore
@@ -26,8 +28,7 @@ export const createUser = async (userAttrs: UserAttrs): Promise<any> => {
       plan: 'free'
     }
   })
-  .executeTakeFirst();
+  .execute();
 
-  console.log(result);
-  return Promise.resolve(userAttrs);
+  return result;
 };
