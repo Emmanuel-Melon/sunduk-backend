@@ -1,4 +1,4 @@
-import { db } from '../../lib/kysely/database'
+import { db } from '../../lib/kysely/database';
 import { PersonUpdate, Person, NewPerson } from '../../lib/kysely/types'
 
 export const listUsers = async () => {

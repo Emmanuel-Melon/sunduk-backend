@@ -1,4 +1,12 @@
+import { db } from '../../lib/kysely/database';
+import { PersonUpdate, Person, NewPerson } from '../../lib/kysely/types'
+
+
 export const listSunduks = async () => {
+    let query = db.selectFrom('sunduk');
+    const result = await query.selectAll().execute();
+    
+    console.log(result);
     return [
         {
             id: 1,

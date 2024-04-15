@@ -12,6 +12,7 @@
     "drizzle-orm": "^0.30.4",
     "express": "^4.19.1",
     "kysely": "^0.27.3",
+    "pangea-node-sdk": "^3.7.0",
     "pg": "^8.11.5",
     "postgres": "^3.4.4",
     "zod": "^3.22.4"

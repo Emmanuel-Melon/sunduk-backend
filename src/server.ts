@@ -1,5 +1,8 @@
 import { app } from "./app";
 import { databaseURL, port } from "./config";
+import authNService  from "./lib/pangea/pangea";
+
+// console.log(authNService);
 
 const listen = () => {
     return new Promise<void>((resolve, reject) =>

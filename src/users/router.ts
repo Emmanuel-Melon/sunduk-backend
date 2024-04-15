@@ -1,7 +1,7 @@
 import { NextFunction, Response, Router, Request } from "express";
 import { createUser } from "./operations/create";
 import { deleteUser } from "./operations/delete";
-import { editUser } from "./operations/edit";
+import { editUser } from "./operations/update";
 import { getUserById } from "./operations/getById";
 import { listUsers } from "./operations/list";
 
